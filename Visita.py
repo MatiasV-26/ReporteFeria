@@ -1,7 +1,7 @@
 import json
 from openpyxl import workbook, load_workbook
 
-d = open("jsonFeria911.json", encoding="utf8")
+d = open("jsonFeria1111.json", encoding="utf8")
 data = json.load(d)
 wb = load_workbook("Reporte.xlsx")
 ws = wb.active
@@ -21,7 +21,7 @@ for  i1 in q.values():
                             lista.append(e)
                             cont += 1
                             ws[f"A{cont + 1}"] = i5['empresaV']
-print(lista)
+#print(lista)
 IngenieriaSistemasCount = 0
 adminCount = 0
 ComunicaCount = 0
@@ -45,14 +45,14 @@ for  ingreso1 in i.values():
                 for ingreso5 in ingreso4.values():  
                         e = ingreso5['empresaV']
                         fecha = ingreso5["fecha"]
-                        #print()
-                        if e not in listaEmpresas and fecha[0:4] == "3/11":
+                        if e not in listaEmpresas and fecha[0:5] == "10/11":
                             listaEmpresas.append(e)
+                            print(e)
 #print(listaEmpresas)
 c = 0
 for E in listaEmpresas:
     
-    i = data["Visita"][E]["3"]["11"]
+    i = data["Visita"][E]["10"]["11"]
     listaCodigos = []
     total = 0
     IngenieriaSistemasCount = 0
@@ -110,7 +110,7 @@ for E in listaEmpresas:
             a += 1
             if i == ingreso2['empresaV'] and emp.value == ingreso2['empresaV']:
                 #print(lista[c], ingreso2['empresaV'])
-                ws[f"C{a}"] = total
+                ws[f"J{a}"] = total
                 a = 0
             
     #print(listaCodigos)
