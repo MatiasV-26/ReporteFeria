@@ -1,6 +1,6 @@
 import json
 
-d = open("jsonFeria311.json", encoding="utf8")
+d = open("jsonFeriaFinal.json", encoding="utf8")
 data = json.load(d)
 IngenieriaSistemasCount = 0
 adminCount = 0

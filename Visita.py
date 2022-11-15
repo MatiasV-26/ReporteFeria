@@ -1,7 +1,7 @@
 import json
 from openpyxl import workbook, load_workbook
 
-d = open("jsonFeria1111.json", encoding="utf8")
+d = open("jsonFeriaFinal.json", encoding="utf8")
 data = json.load(d)
 wb = load_workbook("Reporte.xlsx")
 ws = wb.active
@@ -45,7 +45,7 @@ for  ingreso1 in i.values():
                 for ingreso5 in ingreso4.values():  
                         e = ingreso5['empresaV']
                         fecha = ingreso5["fecha"]
-                        if e not in listaEmpresas and fecha[0:5] == "10/11":
+                        if e not in listaEmpresas and fecha[0:5] == "02/11":
                             listaEmpresas.append(e)
                             print(e)
 #print(listaEmpresas)
